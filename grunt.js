@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 			version: '1.0.0',
 			banner: '/*! Broadcast channels <%= meta.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
 					'* Written by Alberto La Rocca aka 71104 <https://github.com/71104>\n' +
+					'* released under the MIT License\n' +
 					'* part of the Canvace technology <http://www.canvace.com/>\n' +
 					'* Copyright (c) <%= grunt.template.today("yyyy") %> Canvace Srl */',
 		},

@@ -1,8 +1,13 @@
 {
 	"name": "broadcast",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"description": "Broadcast channels for Node",
-	"keywords": "node broadcast channel mailbox",
+	"keywords": [
+		"node",
+		"broadcast",
+		"channel",
+		"mailbox"
+	],
 	"homepage": "https://github.com/canvace/broadcast",
 	"bugs": "https://github.com/canvace/broadcast/issues",
 	"author": "Alberto La Rocca <alberto.larocca@canvace.com> (https://github.com/71104)",
