@@ -33,9 +33,6 @@ module.exports = function (grunt) {
 				smarttabs: true,
 				supernew: true,
 				node: true
-			},
-			globals: {
-				module: false
 			}
 		},
 		min: {
