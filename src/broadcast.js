@@ -3,7 +3,8 @@
 	var MultiSet = require('multiset');
 
 	/**
-	 * TODO
+	 * Represents a broadcast channel where clients can listen to notifications
+	 * or broadcast them to the other clients.
 	 *
 	 * @class Channel
 	 * @constructor
@@ -41,18 +42,33 @@
 			};
 
 			/**
-			 * TODO
+			 * Represents a client of a broadcast channel.
+			 *
+			 * A broadcast channel client may listen to notifications and
+			 * broadcast notifications to other clients.
+			 *
+			 * This inner class cannot be instantiated directly, instances must
+			 * be obtained using the
+			 * {{#crossLink Channel/register:method}}{{/crossLink}} method.
 			 *
 			 * @class Channel.Client
 			 * @constructor
 			 */
 			this.Client = function () {
 				/**
-				 * TODO
+				 * Waits for a notification. When one arrives, the specified
+				 * callback function is called. The data associated to the
+				 * notification is passed to the callback function as an
+				 * argument.
 				 *
 				 * @method listen
-				 * @param callback {Function} TODO
-				 * @return {Function} TODO
+				 * @param callback {Function} A user-defined callback function
+				 * that is called when a notification arrives.
+				 * @param callback.data {Any} The data associated to the
+				 * notification. This is specified by the client that generated
+				 * the notification (see
+				 * {{#crossLink Channel.Client/broadcast:method}}{{/crossLink}}).
+				 * @return {Function} A function that cancels the listening.
 				 */
 				this.listen = function (callback) {
 					if (removed) {
@@ -77,10 +93,13 @@
 				};
 
 				/**
-				 * TODO
+				 * Broadcasts a notification to all the clients in the channel.
 				 *
 				 * @method broadcast
-				 * @param data {Any} TODO
+				 * @param data {Any} The data associated to the notification. It
+				 * can be any thing and is directly passed to the callback
+				 * functions of the clients (see
+				 * {{#crossLink Channel.Client/listen:method}}{{/crossLink}}).
 				 */
 				this.broadcast = function (data) {
 					if (removed) {

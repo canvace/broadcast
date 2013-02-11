@@ -1,40 +1,14 @@
-/*global module:false*/
 module.exports = function (grunt) {
 	grunt.initConfig({
 		meta: {
 			version: '1.0.0',
 			banner: '/*! Broadcast channels <%= meta.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
 					'* Written by Alberto La Rocca aka 71104 <https://github.com/71104>\n' +
-					'* part of the Canvace technology\n' +
+					'* part of the Canvace technology <http://www.canvace.com/>\n' +
 					'* Copyright (c) <%= grunt.template.today("yyyy") %> Canvace Srl */',
 		},
-		concat: {
-			dist: {
-				src: [
-					'<banner:meta.banner>',
-					'<file_strip_banner:src/broadcast.js>'
-				],
-				dest: 'bin/broadcast.js'
-			}
-		},
-		min: {
-			dist: {
-				src: [
-					'<banner:meta.banner>',
-					'<config:concat.dist.dest>'
-				],
-				dest: 'bin/broadcast.min.js'
-			}
-		},
 		lint: {
-				beforeconcat: [
-					'src/broadcast.js'
-				],
-				afterconcat: '<config:concat.dist.dest>'
-		},
-		watch: {
-			files: '<config:lint.files>',
-			tasks: 'lint qunit'
+			dist: 'src/broadcast.js'
 		},
 		jshint: {
 			options: {
@@ -63,6 +37,15 @@ module.exports = function (grunt) {
 				module: false
 			}
 		},
+		min: {
+			dist: {
+				src: [
+					'<banner:meta.banner>',
+					'src/broadcast.js'
+				],
+				dest: 'bin/broadcast.js'
+			}
+		}
 	});
-	grunt.registerTask('default', 'lint:beforeconcat concat min');
+	grunt.registerTask('default', 'lint min');
 };
