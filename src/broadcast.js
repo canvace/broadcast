@@ -68,17 +68,28 @@
 				 * notification. This is specified by the client that generated
 				 * the notification (see
 				 * {{#crossLink Channel.Client/broadcast:method}}{{/crossLink}}).
+				 * @param [scope] {Object} TODO
 				 * @return {Function} A function that cancels the listening.
 				 */
-				this.listen = function (callback) {
+				this.listen = function (callback, scope) {
 					if (removed) {
 						throw 'timeout';
 					} else {
 						var remover = null;
 						if (queue.length) {
-							callback(queue.shift());
+							if (scope) {
+								callback.call(scope, queue.shift());
+							} else {
+								callback(queue.shift());
+							}
 						} else {
-							remover = listeners.add(callback);
+							if (scope) {
+								remover = listeners.add(function (data) {
+									callback.call(scope, data);
+								});
+							} else {
+								remover = listeners.add(callback);
+							}
 						}
 						if (timeout !== null) {
 							clearTimeout(timeout);
