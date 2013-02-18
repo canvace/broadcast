@@ -49,7 +49,7 @@
 			 *
 			 * This inner class cannot be instantiated directly, instances must
 			 * be obtained using the
-			 * {{#crossLink Channel/register:method}}{{/crossLink}} method.
+			 * {{#crosslink Channel/register:method}}{{/crosslink}} method.
 			 *
 			 * @class Channel.Client
 			 * @constructor
@@ -67,7 +67,7 @@
 				 * @param callback.data {Any} The data associated to the
 				 * notification. This is specified by the client that generated
 				 * the notification (see
-				 * {{#crossLink Channel.Client/broadcast:method}}{{/crossLink}}).
+				 * {{#crosslink Channel.Client/broadcast:method}}{{/crosslink}}).
 				 * @param [scope] {Object} TODO
 				 * @return {Function} A function that cancels the listening.
 				 */
@@ -110,7 +110,7 @@
 				 * @param data {Any} The data associated to the notification. It
 				 * can be any thing and is directly passed to the callback
 				 * functions of the clients (see
-				 * {{#crossLink Channel.Client/listen:method}}{{/crossLink}}).
+				 * {{#crosslink Channel.Client/listen:method}}{{/crosslink}}).
 				 */
 				this.broadcast = function (data) {
 					if (removed) {
