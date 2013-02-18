@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		meta: {
-			version: '1.0.0',
+			version: '1.0.4',
 			banner: '/*! Broadcast channels <%= meta.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
 					'* Written by Alberto La Rocca aka 71104 <https://github.com/71104>\n' +
 					'* released under the MIT License\n' +

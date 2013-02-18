@@ -1,7 +1,7 @@
 {
 	"name": "Broadcast channels for Node",
 	"description": "Node script for broadcasting messages to other connected users (e.g. chat rooms).",
-	"version": "1.0.0",
+	"version": "1.0.4",
 	"url": "https://github.com/canvace/broadcast",
 	"options": {
 		"outdir": "doc",
